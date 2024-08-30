@@ -47,6 +47,16 @@ export const CtnButton = styled.div`
   }
 `
 export const Ul = styled.ul`
-  max-width: 600px;
+  max-width: 700px;
   width: 100%;
+  align-itens: center;
+  margin: 0 auto;
+  margin-top: 50px;
+  li {
+    display: flex;
+
+    p {
+      margin-left: 10px;
+    }
+  }
 `

@@ -1,10 +1,12 @@
+import { Provider } from 'react-redux'
 import Contato from './components/Contatos'
+import store from './store'
 
 function App() {
   return (
-    <div className="conatiner">
+    <Provider store={store}>
       <Contato />
-    </div>
+    </Provider>
   )
 }
 
