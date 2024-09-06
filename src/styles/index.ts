@@ -8,3 +8,7 @@ export const EstiloGlobal = styled.div`
     font-family: Poppins;
   }
 `
+export const Container = styled.div`
+  display: grid;
+  grid-template-columns: 234px 1fr;
+`
