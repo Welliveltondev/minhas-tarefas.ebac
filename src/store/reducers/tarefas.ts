@@ -47,14 +47,14 @@ const tarefaSlice = createSlice({
           contato.nome.toLowerCase() === action.payload.nome.toLowerCase()
       )
       if (contatoJaExite) {
-        alert("Contao já existe")
+        alert('Contao já existe')
       } else {
-        state.itens.push.(action.payload)
+        return
       }
     }
   }
 })
 
-export const { remover, editar, cadastrar} = tarefaSlice.actions
+export const { remover, editar, cadastrar } = tarefaSlice.actions
 
 export default tarefaSlice.reducer

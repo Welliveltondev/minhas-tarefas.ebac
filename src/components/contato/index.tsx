@@ -27,7 +27,7 @@ const Contato = ({
       <S.Titulo>{nome}</S.Titulo>
       <S.Descri
         defaultValue={descricao}
-        onChange={(event) => setDescricao(event.target.value)}
+        onChange={() => console.log(descricao)}
       >
         <span>{email}</span>
         <S.SpanContato>{telefone}</S.SpanContato>
@@ -46,7 +46,7 @@ const Contato = ({
               onClick={() => {
                 dispatch(
                   editar({
-                    prioridade,
+                    prioridade: 'familia',
                     telefone,
                     nome,
                     id,

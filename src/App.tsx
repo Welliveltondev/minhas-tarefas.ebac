@@ -19,7 +19,9 @@ function App() {
   return (
     <Provider store={store}>
       <EstiloGlobal>
-        <Container>: </Container>
+        <Container>
+          <Home />
+        </Container>
       </EstiloGlobal>
     </Provider>
   )
