@@ -5,7 +5,7 @@ import store from './store'
 import Home from './pages/Home'
 import Cadastro from './pages/Cadastro'
 
-// // const rota = createBrowserRouter([
+// const rota = createBrowserRouter([
 //   {
 //     path: '/',
 //     element: <Home />
@@ -15,16 +15,16 @@ import Cadastro from './pages/Cadastro'
 //     element: <Cadastro />
 //   }
 // ])
-function App() {
+
+export function App() {
   return (
     <Provider store={store}>
       <EstiloGlobal>
         <Container>
           <Home />
         </Container>
+        <Cadastro />
       </EstiloGlobal>
     </Provider>
   )
 }
-
-export default App

@@ -20,12 +20,14 @@ export const Descri = styled.div`
   font-size: 14px;
   line-height: 24px;
   display: block;
-  margin-bottom: 16px;
   margin-top: 16px;
   resize: none;
   width: 50vh;
   border: none;
-  padding: 30px 0;
+  padding: 20px 0;
+  input {
+    border: none;
+  }
 `
 export const BarraOpcoes = styled.div`
   display: inline-block;
@@ -59,20 +61,16 @@ export const Botao = styled.button`
 export const BotaoSalvar = styled(Botao)`
   background-color: green;
   border: none;
-  border-bottom: 1px solid black;
 `
 export const BotaoCancel = styled(Botao)`
   background-color: red;
   border: none;
-  border-bottom: 1px solid black;
 `
 export const BotaoEditar = styled(Botao)`
   background-color: #ff885b;
   border: none;
-  border-bottom: 1px solid black;
 `
 export const BotaoRemove = styled(Botao)`
   background-color: #3795bd;
   border: none;
-  border-bottom: 1px solid black;
 `

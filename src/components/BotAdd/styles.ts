@@ -1,11 +1,11 @@
 import styled from 'styled-components'
-// import { Link } from 'react-dom'
+// import { Link } from 'react-router-dom'
 
 export const Circ = styled.a`
   height: 65px;
   width: 65px;
   border-radius: 50%;
-  display: flex;
+  display: none;
   background-color: #44bd32;
   color: #fff;
   position: fixed;

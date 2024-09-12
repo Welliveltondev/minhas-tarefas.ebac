@@ -6,36 +6,42 @@ import { cadastrar } from '../../store/reducers/tarefas'
 
 const Cadastro = () => {
   const dispatch = useDispatch()
-  const [titulo, setTitulo] = useState('')
+  const [nome, setTitulo] = useState('')
+  const [email, setPrior] = useState('')
+  const [tell, settell] = useState('')
   const cadastraContato = (evento: FormEvent) => {
     evento.preventDefault()
-    const contatoPadd = new Tarefa('nome', 'prioridade', 'email', 123445, 23455)
+    const contatoPadd = new Tarefa(nome, email, tell, 111, 1)
     dispatch(cadastrar(contatoPadd))
   }
   return (
-    <S.ContainerNewCas>
+    <S.ContainerNewCas className="/novo">
       <S.Title>Cadastro de novo contato</S.Title>
-      <div>
+      <S.ConTnew>
         <form onSubmit={cadastraContato}>
-          <input
-            value={titulo}
+          <S.Campo
+            value={nome}
             onChange={(evento) => setTitulo(evento.target.value)}
             type="text"
             placeholder="Nome"
           />
-          <input type="email" placeholder="E-mail" />
-          <input type="number" placeholder="Telefone" />
+          <S.Campo
+            value={email}
+            onChange={(evento) => setPrior(evento.target.value)}
+            type="email"
+            placeholder="E-mail"
+          />
+          <input
+            value={tell}
+            onChange={(evento) => settell(evento.target.value)}
+            type="number"
+            placeholder="Telefone"
+          />
           <div>
-            <span>Futebol</span>
-            <span>Familia</span>
-            <span>Trabalho</span>
-            <span>Outros</span>
-          </div>
-          <div>
-            <button>Cadastra +</button>
+            <button>Cadastrar +</button>
           </div>
         </form>
-      </div>
+      </S.ConTnew>
     </S.ContainerNewCas>
   )
 }

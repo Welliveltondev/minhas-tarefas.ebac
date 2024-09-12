@@ -6,23 +6,7 @@ type ContatoSlice = {
 }
 
 const initialState: ContatoSlice = {
-  itens: [
-    {
-      id: 1,
-      nome: 'akenato',
-      telefone: 1234345,
-      email: 'aken@g.com',
-      prioridade: 'familia'
-    },
-
-    {
-      id: 2,
-      nome: 'xerxes',
-      telefone: 1234345,
-      email: 'xerxes@g.com',
-      prioridade: 'amigo'
-    }
-  ]
+  itens: []
 }
 
 const tarefaSlice = createSlice({
@@ -41,15 +25,21 @@ const tarefaSlice = createSlice({
         state.itens[indexContato] = action.payload
       }
     },
-    cadastrar: (state, action: PayloadAction<Tarefa>) => {
+    cadastrar: (state, action: PayloadAction<Omit<Tarefa, 'id'>>) => {
       const contatoJaExite = state.itens.find(
         (contato) =>
           contato.nome.toLowerCase() === action.payload.nome.toLowerCase()
       )
       if (contatoJaExite) {
-        alert('Contao já existe')
+        alert('Contato já existe')
       } else {
-        return
+        const ultimoContato = state.itens[state.itens.length - 1]
+
+        const novoContato = {
+          ...action.payload,
+          id: ultimoContato ? ultimoContato.id + 1 : 1
+        }
+        state.itens.push(novoContato)
       }
     }
   }

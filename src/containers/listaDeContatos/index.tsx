@@ -2,18 +2,15 @@ import { useSelector } from 'react-redux'
 import Contato from '../../components/contato'
 import { ContainerMain, Ul } from './styles'
 import { RootReducer } from '../../store'
-import { Key } from 'react'
 
 const ListaDeContatos = () => {
   const { itens } = useSelector((state: RootReducer) => state.tarefas)
   return (
     <ContainerMain>
-      <p>
-        2 contatos como <span>principal</span>
-      </p>
+      <p></p>
       <Ul>
         {itens.map((t) => (
-          <li key={t.nome}>
+          <li key={t.id}>
             <Contato
               id={t.id}
               prioridade={t.prioridade}
